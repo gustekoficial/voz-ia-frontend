@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  font-family: var(--font-body), sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-display), sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-mono), monospace;
+}
+
+/* Textura sutil de réguas de dial, usada nos cabeçalhos dos painéis */
+.bg-dial-ticks {
+  background-image: repeating-linear-gradient(
+    90deg,
+    rgba(242, 236, 221, 0.06) 0px,
+    rgba(242, 236, 221, 0.06) 1px,
+    transparent 1px,
+    transparent 14px
+  );
+}
+
+@keyframes rec-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+.animate-rec-pulse {
+  animation: rec-pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes bar-bounce {
+  0%,
+  100% {
+    transform: scaleY(0.4);
+  }
+  50% {
+    transform: scaleY(1);
+  }
+}
+
+.animate-bar-bounce {
+  animation: bar-bounce 0.9s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-rec-pulse,
+  .animate-bar-bounce {
+    animation: none;
+  }
+}
